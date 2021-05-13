@@ -1,0 +1,44 @@
+<form [formGroup]="userProfileForm" (submit)="profileFormSubmitted()">
+    <mat-card style="margin: 20px">
+        <mat-card-header class="header">
+            <h3>User Profile</h3>
+            <h5>Tell us a little about yourself</h5>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="fields">
+                <mat-form-field>
+                    <mat-label>First Name</mat-label>
+                    <input matInput formControlName="firstName">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Last Name</mat-label>
+                    <input matInput formControlName="lastName">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Phone Number</mat-label>
+                    <input matInput formControlName="phoneNumber">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Shirt Size</mat-label>
+                    <mat-select formControlName="shirtSize">
+                        <mat-option *ngFor="let shirtSize of shirtSizes" value="shirtSize">{{shirtSize}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Shirt Size</mat-label>
+                    <mat-select formControlName="shirtFit">
+                        <mat-option *ngFor="let fit of shirtFits" value="fit">{{fit}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary">Submit</button>
+            <button mat-raised-button color="secondary" (click)="cancelled($event)">Cancel</button>
+        </mat-card-actions>
+    </mat-card>
+</form>

@@ -1,0 +1,13 @@
+.fields {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
+.fields > mat-form-field {
+    width: 100%;
+}
