@@ -1,15 +1,59 @@
-<h1>User Profile - Welcome {{userProfile.userName}}</h1>
-<p>Tell us a little about yourself:</p>
+<form [formGroup]="userProfileForm" (submit)="profileFormSubmitted()">
+    <mat-card style="margin: 20px">
+        <mat-card-header class="header">
+            <h3>User Profile - Welcome {{userProfile.userName}}</h3>
+            <h5>Tell us a little about yourself</h5>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="fields">
+                <mat-form-field>
+                    <mat-label>First Name</mat-label>
+                    <input matInput formControlName="firstName">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Last Name</mat-label>
+                    <input matInput formControlName="lastName">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Phone Number</mat-label>
+                    <input matInput formControlName="phoneNumber">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Shirt Size</mat-label>
+                    <mat-select formControlName="shirtSize">
+                        <mat-option *ngFor="let shirtSize of shirtSizes" value="shirtSize">{{shirtSize}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Shirt Size</mat-label>
+                    <mat-select formControlName="shirtFit">
+                        <mat-option *ngFor="let fit of shirtFits" value="fit">{{fit}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary">Submit</button>
+            <button mat-raised-button color="secondary" (click)="cancelled($event)">Cancel</button>
+        </mat-card-actions>
+    </mat-card>
+    
 
-<form name="profileForm"  class="example-form" style="display: flex; flex-direction: column;">
+</form>
+
+<!-- <form name="profileForm" class="example-form" style="display: flex; flex-direction: column;">
     <mat-form-field class="">
         <mat-label>User Name:</mat-label>
         <input name="profileForm" #userName matInput placeholder="" value="">
     </mat-form-field>
 
     <mat-form-field class="">
-      <mat-label>First Name:</mat-label>
-      <input name="profileForm" #firstName matInput placeholder="" value="">
+        <mat-label>First Name:</mat-label>
+        <input name="profileForm" #firstName matInput placeholder="" value="">
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
@@ -20,11 +64,11 @@
     <mat-form-field class="">
         <mat-label>Phone Number:</mat-label>
         <input name="profileForm" #phoneNumber matInput placeholder="" value="">
-      </mat-form-field>
+    </mat-form-field>
 
     <mat-form-field class="example-full-width">
-      <mat-label>Bio:</mat-label>
-      <textarea #bio matInput placeholder="I love skating and prefer a laid back fit..."></textarea>
+        <mat-label>Bio:</mat-label>
+        <textarea #bio matInput placeholder="I love skating and prefer a laid back fit..."></textarea>
     </mat-form-field>
 
     <h2>Shirt</h2>
@@ -42,9 +86,11 @@
         <option>Tight</option>
         <option>Loose</option>
     </select>
-    <button (click)="createProfile(firstName.value, lastName.value, bio.value, shirtSize.value, shirtFit.value, phoneNumber.value)" class="button" type="button">
+    <button
+        (click)="createProfile(firstName.value, lastName.value, bio.value, shirtSize.value, shirtFit.value, phoneNumber.value)"
+        class="button" type="button">
         Submit
     </button>
 
-    
-</form>
+
+</form> -->
