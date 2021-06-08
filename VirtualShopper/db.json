@@ -1,8 +1,91 @@
 {
-    "people": [
-        {
-            "id": 1,
-            "name": "jacob"
-        }
-    ]
+  "people": [
+    {
+      "id": 1,
+      "name": "jacob"
+    },
+    {
+      "id": 2,
+      "name": "jason"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "userName": "Michch333",
+      "firstName": "Mike",
+      "lastName": "Campbell",
+      "shirtSize": "medium",
+      "pantLength": "34",
+      "pantWidth": "32",
+      "shoeSize": "10"
+    },
+    {
+      "id": 2,
+      "userName": "rofl10611",
+      "firstName": "Jason",
+      "lastName": "Walser",
+      "shirtSize": "medium",
+      "pantLength": "30",
+      "pantWidth": "30",
+      "shoeSize": "10"
+    },
+    {
+      "id": 3,
+      "userName": "hilldog",
+      "firstName": "Hillary",
+      "lastName": "Doan",
+      "shirtSize": "small",
+      "pantLength": null,
+      "pantWidth": null,
+      "shoeSize": "6"
+    },
+    {
+      "id": 4,
+      "userName": "jakeP",
+      "firstName": "Jake",
+      "lastName": "Plumb",
+      "shirtSize": "medium",
+      "pantLength": "32",
+      "pantWidth": "30",
+      "shoeSize": "11"
+    },
+    {
+      "id": 5,
+      "userName": "jonP",
+      "firstName": "Jon",
+      "lastName": "Plumb",
+      "shirtSize": "medium",
+      "pantLength": "32",
+      "pantWidth": "30",
+      "shoeSize": "10"
+    },
+    {
+      "id": 6,
+      "userName": "Billy01",
+      "firstName": "William",
+      "lastName": "Boxer",
+      "shirtSize": "large",
+      "pantLength": "30",
+      "pantWidth": "28",
+      "shoeSize": "10"
+    }
+  ],
+  "shoppedBoxes": [
+      {
+          "boxId": "1a",
+          "items": [
+              {
+                  "type": "shirt",
+                  "size": "medium",
+                  "length": null,
+                  "width": null,
+                  "thumbnailUrl": "",
+                  "price": 22.25,
+                  "brand": "AeroPostle"
+              }
+          ]
+      }
+  ]
+
 }
