@@ -74,6 +74,8 @@
   "shoppedBoxes": [
       {
           "boxId": "1a",
+          "shopperId": "shoper0101",
+          "requestorId": "requestor0101",
           "items": [
               {
                   "type": "shirt",
@@ -84,7 +86,10 @@
                   "price": 22.25,
                   "brand": "AeroPostle"
               }
-          ]
+          ],
+          "price": 22.50
+          
+
       }
   ]
 
