@@ -35,4 +35,4 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
       - name: Linting
-        run: ng lint
+        run: ng run lint
