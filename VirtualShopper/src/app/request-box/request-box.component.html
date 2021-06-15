@@ -1,0 +1,49 @@
+<form [formGroup]="requestBoxForm" (submit)="requestFormSubmitted()">
+    <mat-card style="margin: 20px">
+        <mat-card-header class="header">
+            <h2>Request a box</h2>
+        </mat-card-header>
+        <mat-card-content>
+            <h5>Tell us why you need a box:</h5>
+            <div class="fields">
+                <mat-form-field>
+                    <mat-label>What's the occasion?</mat-label>
+                    <mat-hint align="start"><strong>The more specific you are the better!</strong> </mat-hint>
+                    <input matInput formControlName="reason">
+                </mat-form-field>
+                <mat-form-field style="width: 10em; margin-bottom: 25px;">
+                    <mat-label>Rough Budget?</mat-label>
+                    <mat-hint align="start"><strong>Shoppers will try and stay close to your budget goals!</strong> </mat-hint>
+                    <span matPrefix>$</span>
+                    <input matInput formControlName="budget">
+                </mat-form-field>
+                <br>
+                <ng-container *ngFor="let item of items">
+                    <mat-checkbox  style="display: block;" #item [checked] ="item.isSelected" (change)="item.isSelected = !item.isSelected">{{item.name}}</mat-checkbox>
+                    <div *ngIf="item.isSelected">
+                        <mat-form-field>
+                            <mat-label>Notes:</mat-label>
+                            <input placeholder="" matInput formControlName="item.notes">
+                        </mat-form-field>
+                        <mat-form-field *ngIf="item.sizes.length != 0">
+                            <mat-label>Size:</mat-label>
+                            <mat-select  matNativeControl formControlName="size">
+                                <mat-option *ngFor='let size of item.sizes' value="{{size}}">{{size}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </ng-container>
+            </div>
+            <h3>Priority:</h3>
+            <ng-container *ngFor='let item of sortBy()'>
+                <ng-container *ngIf='item.isSelected'>
+                    <mat-icon>{{item.icon}}</mat-icon>
+                </ng-container>
+            </ng-container>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="secondary" (click)="cancelled($event)">Cancel</button>
+            <button mat-raised-button color="primary">Submit</button>
+        </mat-card-actions>
+    </mat-card>
+</form>
