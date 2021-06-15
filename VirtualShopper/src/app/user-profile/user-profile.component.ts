@@ -17,7 +17,7 @@ export class UserProfileComponent implements OnInit {
     shirtSize: new FormControl(null, [Validators.required]),
     shirtFit: new FormControl(null, [Validators.required]),
     phoneNumber: new FormControl(null, [Validators.required]),
-  });;
+  });
 
   constructor() {}
 

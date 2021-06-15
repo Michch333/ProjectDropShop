@@ -28,7 +28,7 @@ export class RequestBoxComponent implements OnInit {
     {name: 'Socks', icon: 'looks_5', isSelected: false, sizes: ['XS', 'S', 'M', 'L', 'XL'], priority: 5},
     {name: 'Accessories', icon: 'looks_6', isSelected: false, sizes: [], priority: 6},
   ];
-  
+
   sortBy() {
     return (this.items as Item[]).sort((a, b) => a.priority > b.priority ? 1 : a.priority === b.priority ? 0 : -1);
   }
@@ -39,7 +39,7 @@ export class RequestBoxComponent implements OnInit {
   ngOnInit(): void {
   }
   requestFormSubmitted(): void {
-    console.log(this.requestBoxForm)
+    console.log(this.requestBoxForm);
 
   }
   public cancelled(e) {
@@ -49,9 +49,9 @@ export class RequestBoxComponent implements OnInit {
 }
 
 export interface Item {
-  name: string,
-  icon?: string,
-  isSelected: boolean,
-  sizes: any[],
-  priority: number
+  name: string;
+  icon?: string;
+  isSelected: boolean;
+  sizes: any[];
+  priority: number;
 }
