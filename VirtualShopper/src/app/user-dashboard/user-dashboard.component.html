@@ -6,6 +6,9 @@
         <mat-card-header>
           <mat-card-title>
             <a routerLink="/userProfile" >{{card.title}}</a>
+            <div *ngFor="let box of boxes">
+              <p>{{testData}}</p>
+            </div>
             <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
               <mat-icon>more_vert</mat-icon>
             </button>

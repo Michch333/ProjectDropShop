@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import { HttpClient, HttpResponse } from '@angular/common/http';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-user-dashboard',
@@ -8,6 +10,27 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
   styleUrls: ['./user-dashboard.component.css']
 })
 export class UserDashboardComponent {
+
+  constructor(private breakpointObserver: BreakpointObserver, private apiService: ApiService) {
+    this.testData = [];
+  }
+
+  ngOnInit(){
+    this.apiResponse = this.apiService.getShoppedBoxes()
+      .subscribe(data => {
+        for (const d of (data as any)){
+          var tempBox = new ShoppedBox();
+          tempBox.price = d.price;
+          tempBox.boxId = d.boxId;
+          tempBox.requestorId = d.requestorId;
+          tempBox.shopperId = d.shopperId;
+          this.testData.push(tempBox);
+        }
+      });
+    console.log(this.testData)
+  }
+
+
   /** Based on the screen size, switch from standard to one column per row */
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
@@ -28,6 +51,21 @@ export class UserDashboardComponent {
       ];
     })
   );
+testData: ShoppedBox [];
+apiResponse: any;
+};
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+export class ShoppedBox {
+  boxId: string;
+  shopperId: string;
+  requestorId: string;
+  items: Item[];
+  price: number;
+};
+
+export class Item {
+  type: string;
+  thumbnailUrl: string;
+  price: number;
+  brand: string;
 }
