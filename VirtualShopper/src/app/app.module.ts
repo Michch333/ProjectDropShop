@@ -19,6 +19,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { TestComponent } from './test/test.component';
 import { FormsModule } from '@angular/forms';
+import { RequestBoxComponent } from './request-box/request-box.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { FormsModule } from '@angular/forms';
     UserDashboardComponent,
     UserProfileComponent,
     TestComponent,
+    RequestBoxComponent,
   ],
   imports: [
     BrowserModule,
