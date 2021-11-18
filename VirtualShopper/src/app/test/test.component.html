@@ -25,21 +25,23 @@
 </form>
 
 <h1>
-    Your Boxes
+    Your Boxes ({{filteredBoxes.length}})
 </h1>
 
-<div *ngFor="let box of filteredBoxes" style="border: 1px solid black; padding: 2px;">
-    <div>
-       Total Price: ${{box.totalPrice}}
-    </div>
-    Items:
-    <div *ngFor="let item of box.Items">
-        <div>
-            ${{item.price}}
-            {{item.ClothingType}}
-            {{item.Size}}
+<div>
+    <div *ngFor="let box of filteredBoxes" style="border: 1px solid black; margin-bottom: 20px;display: flex; justify-content: space-between;">
+        <div style="align-self: flex-start;">
+        <h1>Total Price: ${{box.totalPrice}}</h1>
         </div>
+        Items:
+        <div *ngFor="let item of box.Items">
+            <div>
+                <img [src]="item.imageUrl" style="height: 200px; width: 200px;">
+                ${{item.price}}
+                {{item.ClothingType}}
+                {{item.Size}}
+            </div>
 
+        </div>
     </div>
-
 </div>
