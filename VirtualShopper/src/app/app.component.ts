@@ -11,7 +11,7 @@ export class AppComponent {
   title = 'VirtualShopper';
   constructor() {
     this.dummyDataBoxes = [];
-    for (let i = 0; i < 100; i++){
+    for (let i = 0; i < 1000; i++){
       this.dummyDataBoxes.push(createRandomBox())
     }
     console.log('Done!');

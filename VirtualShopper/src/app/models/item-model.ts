@@ -5,5 +5,8 @@ export class Item {
 
     price : number = 0;
     clothingType: ClothingType;
-    size : Size; 
+    size : Size;
+    imageUrl?: string;
+    description: string = '';
+
 }
