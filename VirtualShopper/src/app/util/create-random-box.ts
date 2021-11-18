@@ -50,6 +50,7 @@ export function createRandomBox() {
 
     var myBox = new Box(itemList);
     console.log(myBox);
+    return myBox;
 }
 export function getNumberOfItems(max: number) {
     return getRandomIntWithMin(1,max);
