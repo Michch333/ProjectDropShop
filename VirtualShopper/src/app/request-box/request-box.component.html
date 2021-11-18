@@ -1,1 +1,34 @@
-<p>request-box works!</p>
+<div *ngIf="filteredSubmitted != true">
+    <form #criteria="ngForm" (ngSubmit)="getFilteredBoxesByCriteria(criteria.value)">
+        <input type="number" name="priceRange" label="Please Enter your price range" placeholder="150" value="150" ngModel />
+        <br>
+        <label>Shirt</label>
+        <input type="checkbox" name="shirt" value="true" ngModel>
+        <br>
+        <label>Pants</label>
+        <input type="checkbox" name="pants" value="true" ngModel>
+        <br>
+        <label>Shoes</label>
+        <input type="checkbox" name="shoes" value="true" ngModel>
+        <br>
+        <label>Socks</label>
+        <input type="checkbox" name="socks" value="true" ngModel>
+        <br>
+        <label>Jacket</label>
+        <input type="checkbox" name="jacket" value="true" ngModel>
+        <br>
+        <label>Misc</label>
+        <input type="checkbox" name="misc" value="true" ngModel>
+        <br>
+        <button type="submit">
+        Submit
+        </button>
+    </form>
+</div>
+<div *ngIf="filteredSubmitted == true">
+    <h1>Thank you for your submission!</h1>
+    <h3>We will notify you when a shopper has hand-picked your box!</h3>
+    <button (cick)="returnHome()"></button>
+</div>
+
+<!-- <app-filtered-results></app-filtered-results> -->
