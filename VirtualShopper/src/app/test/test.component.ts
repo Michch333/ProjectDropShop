@@ -92,7 +92,7 @@ export class TestComponent implements OnInit {
     console.log('Price should now be below target price');
     console.log(this.filteredBoxes);
     
-    this.filteredBoxes = this.sortList(this.filteredBoxes);
+    this.filteredBoxes = this.filteredBoxes.sort((a, b) => b.totalPrice - a.totalPrice);
     return this.filteredBoxes;
     }
     filteredBoxes: Box[] = [];
@@ -118,17 +118,5 @@ export class TestComponent implements OnInit {
         tempArr.push(ClothingType.Misc)
       }
       return tempArr;
-    }
-
-    sortList (listOfBoxes: Box[]){
-      for (let i = 0; i < listOfBoxes.length; i ++) {
-        if (listOfBoxes[i+1] != undefined) {
-          if (listOfBoxes[i].totalPrice < listOfBoxes[i + 1].totalPrice){
-            listOfBoxes.push(listOfBoxes[i]);
-            listOfBoxes.splice(i, 1);
-          }
-        }
-      }
-      return listOfBoxes;
     }
   }
