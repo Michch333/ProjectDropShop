@@ -1,3 +1,45 @@
-<button (click)= "test()">
-Hey Jason let's update this dynamically
-</button>
+<form #criteria="ngForm" (ngSubmit)="test(criteria.value)">
+    <input type="number" name="priceRange" label="Please Enter your price range" placeholder="150" value="150" ngModel />
+    <br>
+    <label>Shirt</label>
+    <input type="checkbox" name="shirt" value="true" ngModel>
+    <br>
+    <label>Pants</label>
+    <input type="checkbox" name="pants" value="true" ngModel>
+    <br>
+    <label>Shoes</label>
+    <input type="checkbox" name="shoes" value="true" ngModel>
+    <br>
+    <label>Socks</label>
+    <input type="checkbox" name="socks" value="true" ngModel>
+    <br>
+    <label>Jacket</label>
+    <input type="checkbox" name="jacket" value="true" ngModel>
+    <br>
+    <label>Misc</label>
+    <input type="checkbox" name="misc" value="true" ngModel>
+    <br>
+    <button type="submit">
+    Submit
+    </button>
+</form>
+
+<h1>
+    Your Boxes
+</h1>
+
+<div *ngFor="let box of filteredBoxes" style="border: 1px solid black; padding: 2px;">
+    <div>
+       Total Price: ${{box.totalPrice}}
+    </div>
+    Items:
+    <div *ngFor="let item of box.Items">
+        <div>
+            ${{item.price}}
+            {{item.ClothingType}}
+            {{item.Size}}
+        </div>
+
+    </div>
+
+</div>
