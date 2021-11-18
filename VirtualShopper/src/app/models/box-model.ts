@@ -11,6 +11,8 @@ export class Box {
         this.checkForClothingItem();
         this.totalPrice = this.calcTotalPrice();
     }
+    totalPrice: number = 0;
+    Items: Item [];
 
     hasShirt: boolean = false; 
     hasPants: boolean = false;
@@ -18,10 +20,6 @@ export class Box {
     hasShoes: boolean = false;
     hasJacket: boolean = false;
     hasMisc: boolean = false;
-
-    totalPrice: number = 0;
-
-    Items: Item [];
 
     checkForClothingItem () {
         this.Items.forEach(z => {
