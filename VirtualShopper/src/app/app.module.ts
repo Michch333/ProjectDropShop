@@ -17,12 +17,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { LayoutModule } from '@angular/cdk/layout';
 import { AppRoutingModule } from './app-routing.module';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserDashboardComponent,
     UserProfileComponent,
+    TestComponent,
   ],
   imports: [
     BrowserModule,
