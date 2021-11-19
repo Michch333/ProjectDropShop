@@ -32,4 +32,5 @@
 </div>
 
 <app-user-dash (createRequest) = "createRequest($event)" (viewResults) = "viewResults($event)" [boxes] = "filteredBoxes" *ngIf = "showDash == true"></app-user-dash>
-<app-filtered-results *ngIf = "showResults == true" [boxes] ="filteredBoxes"></app-filtered-results>
+<app-filtered-results (sentIndvBox) = "viewIndividualBox($event)" *ngIf = "showResults == true" [boxes] ="filteredBoxes"></app-filtered-results>
+<app-individual-box [box] = "singleBox"></app-individual-box>

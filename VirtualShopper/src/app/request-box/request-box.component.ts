@@ -12,12 +12,12 @@ export class RequestBoxComponent implements OnInit {
   @Input() boxes; 
   filteredSubmitted: boolean;
   filteredBoxes: Box[] = [];
+  singleBox: Box;
   showThankYou: boolean;
   showResults: boolean;
   showDash: boolean;
 
   constructor() {
-
   }
 
   ngOnInit(): void {
@@ -138,6 +138,11 @@ export class RequestBoxComponent implements OnInit {
     this.showThankYou = false;
     this.filteredSubmitted = false;
     this.showDash = false;
+  }
+
+  viewIndividualBox(invdBox: Box) {
+    this.singleBox = invdBox;
+    this.showResults = false;
   }
 
 }

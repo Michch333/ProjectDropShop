@@ -22,6 +22,7 @@ import { FormsModule } from '@angular/forms';
 import { RequestBoxComponent } from './request-box/request-box.component';
 import { FilteredResultsComponent } from './request-box/filtered-results/filtered-results.component';
 import { UserDashComponent } from './request-box/user-dash/user-dash.component';
+import { IndividualBoxComponent } from './request-box/individual-box/individual-box.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { UserDashComponent } from './request-box/user-dash/user-dash.component';
     RequestBoxComponent,
     FilteredResultsComponent,
     UserDashComponent,
+    IndividualBoxComponent,
   ],
   imports: [
     BrowserModule,

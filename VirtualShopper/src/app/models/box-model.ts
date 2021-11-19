@@ -6,12 +6,19 @@ export class Box {
     /**
      *
      */
-    constructor(items?: Item[]) {
+    constructor(items?: Item[], boxId?: number) {
         this.Items = items;
         this.checkForClothingItem();
         this.totalPrice = this.calcTotalPrice();
+        if (boxId != undefined) {
+            this.boxId = boxId
+        }
+        else {
+            this.boxId = Math.floor(Math.random() * 10000);
+        }
     }
     totalPrice: number = 0;
+    boxId: number;
     Items: Item [];
 
     hasShirt: boolean = false; 

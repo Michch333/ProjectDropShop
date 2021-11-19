@@ -3,7 +3,7 @@ import { ClothingType } from "../models/clothing-type-model";
 import { Item } from "../models/item-model";
 import { Size } from "../models/size-model";
 
-export function createRandomBox() {
+export function createRandomBox(index?: number) {
     var itemList: Item[] = [];
     var numberOfItems = getNumberOfItems(6);
     for (let i = 0; i < numberOfItems; i++){
@@ -54,7 +54,7 @@ export function createRandomBox() {
         itemList.push(myItem);
     }
 
-    var myBox = new Box(itemList);
+    var myBox = new Box(itemList, index);
     console.log(myBox);
     return myBox;
 }

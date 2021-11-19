@@ -1,0 +1,5 @@
+{{box.totalPrice}}
+<div *ngFor="let item of box.Items">
+    <h1>${{item.price}}</h1>
+    <img [src]="item.imageUrl" style="max-height: 400px;"/>
+</div>

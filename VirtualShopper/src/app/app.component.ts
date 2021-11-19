@@ -12,7 +12,7 @@ export class AppComponent {
   constructor() {
     this.dummyDataBoxes = [];
     for (let i = 0; i < 1000; i++){
-      this.dummyDataBoxes.push(createRandomBox())
+      this.dummyDataBoxes.push(createRandomBox(i))
     }
     console.log('Done!');
   }
