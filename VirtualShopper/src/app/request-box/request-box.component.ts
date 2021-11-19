@@ -143,6 +143,7 @@ export class RequestBoxComponent implements OnInit {
   viewIndividualBox(invdBox: Box) {
     this.singleBox = invdBox;
     this.showResults = false;
+    this.showDash = false;
   }
 
 }
