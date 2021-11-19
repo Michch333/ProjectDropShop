@@ -25,10 +25,11 @@
         </button>
     </form>
 </div>
-<div *ngIf="filteredSubmitted == true">
+<div *ngIf="filteredSubmitted == true && showThankYou != false">
     <h1>Thank you for your submission!</h1>
     <h3>We will notify you when a shopper has hand-picked your box!</h3>
-    <button (cick)="returnHome()"></button>
+    <button (click)="returnHome()">Return Home</button>
 </div>
 
-<!-- <app-filtered-results></app-filtered-results> -->
+<app-user-dash (createRequest) = "createRequest($event)" (viewResults) = "viewResults($event)" [boxes] = "filteredBoxes" *ngIf = "showDash == true"></app-user-dash>
+<app-filtered-results *ngIf = "showResults == true" [boxes] ="filteredBoxes"></app-filtered-results>

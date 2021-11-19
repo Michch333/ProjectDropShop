@@ -1,0 +1,9 @@
+<div>
+    <h1>Welcome User!</h1>
+    <h3>What would you like to do?</h3>
+    <div style="display: flex; flex-flow: column nowrap; width: 30%; ">
+        <button (click)="ViewProfile()">View my Profile: (TBD)</button>
+        <button (click)="CreateRequest()">Create New Request</button>
+        <button *ngIf="filteredBoxes.length > 0" (click)="ViewResults()">YOU HAVE A NEW BOX</button>
+    </div>
+</div>

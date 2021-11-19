@@ -12,6 +12,9 @@ export class RequestBoxComponent implements OnInit {
   @Input() boxes; 
   filteredSubmitted: boolean;
   filteredBoxes: Box[] = [];
+  showThankYou: boolean;
+  showResults: boolean;
+  showDash: boolean;
 
   constructor() {
 
@@ -22,6 +25,7 @@ export class RequestBoxComponent implements OnInit {
   }
   getFilteredBoxesByCriteria(result) {
     this.filteredSubmitted = true;
+    this.showThankYou = true;
     let requiredItems: ClothingType[] = this.translateCheckBoxes(result);
     console.log(result);
     this.filterBoxes(result.priceRange, requiredItems);
@@ -121,7 +125,19 @@ export class RequestBoxComponent implements OnInit {
   }
 
   returnHome(){
-    alert("Home works")
+    this.showThankYou = false;
+    this.showDash = true;
+  }
+
+  viewResults(event: boolean){
+   this.showResults = event;
+  }
+
+  createRequest(event: boolean){
+    this.showResults = false;
+    this.showThankYou = false;
+    this.filteredSubmitted = false;
+    this.showDash = false;
   }
 
   }
