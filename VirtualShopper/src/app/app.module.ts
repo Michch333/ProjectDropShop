@@ -20,6 +20,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { TestComponent } from './test/test.component';
 import { FormsModule } from '@angular/forms';
 import { RequestBoxComponent } from './request-box/request-box.component';
+import { FilteredResultsComponent } from './request-box/filtered-results/filtered-results.component';
+import { UserDashComponent } from './request-box/user-dash/user-dash.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { RequestBoxComponent } from './request-box/request-box.component';
     UserProfileComponent,
     TestComponent,
     RequestBoxComponent,
+    FilteredResultsComponent,
+    UserDashComponent,
   ],
   imports: [
     BrowserModule,
