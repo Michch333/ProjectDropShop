@@ -1,26 +1,76 @@
-<div *ngIf="filteredSubmitted != true">
-    <form #criteria="ngForm" (ngSubmit)="getFilteredBoxesByCriteria(criteria.value)">
-        <input type="number" name="priceRange" label="Please Enter your price range" placeholder="150" value="150" ngModel />
-        <br>
-        <label>Shirt</label>
-        <input type="checkbox" name="shirt" value="true" ngModel>
-        <br>
-        <label>Pants</label>
-        <input type="checkbox" name="pants" value="true" ngModel>
-        <br>
-        <label>Shoes</label>
-        <input type="checkbox" name="shoes" value="true" ngModel>
-        <br>
-        <label>Socks</label>
-        <input type="checkbox" name="socks" value="true" ngModel>
-        <br>
-        <label>Jacket</label>
-        <input type="checkbox" name="jacket" value="true" ngModel>
-        <br>
-        <label>Misc</label>
-        <input type="checkbox" name="misc" value="true" ngModel>
-        <br>
-        <button type="submit">
+<div *ngIf="true" class="formContainer" style="display: flex; flex-direction: column; max-width: 75%;">
+    <form #criteria="ngForm" (ngSubmit)="getFilteredBoxesByCriteria(criteria.value)" id="form">
+        <h1 style="margin: auto; margin-bottom: 10px;">Welcome!</h1>
+
+        <div id="topRow">
+            <mat-form-field appearance="fill" id="boxDescription">
+                <mat-label>Tell us what brought you here...</mat-label>
+                <textarea placeholder="Ex. Going to a dinner party..." matInput></textarea>
+            </mat-form-field>
+            <!-- <input type="number" name="priceRange" label="Please Enter your price range" placeholder="150" value="150" ngModel /> -->
+        </div>
+
+
+        <div id="boxHelpers">
+            <h2>What do you NEED included in your box?</h2>
+            <p>Items selected are required in your box. If your shopper still has room, they will try and get as close to your target price as possible!</p>
+        </div>
+
+
+        <div id="shirtHelpers" class="clothingHelpers">
+            <mat-checkbox [(ngModel)]="checkForShirt" name="shirt" value="true" labelPosition="before" class="example-margin">Shirt</mat-checkbox>
+            <mat-form-field *ngIf="checkForShirt" appearance="fill" id="boxDescription">
+                <mat-label class="notes">Notes:</mat-label>
+                <textarea placeholder="Loose fitting..." matInput></textarea>
+            </mat-form-field>
+        </div>
+
+        <div id="pantsHelpers" class="clothingHelpers">
+            <mat-checkbox [(ngModel)]="checkForPants" name="pants" value="true" labelPosition="before" class="example-margin">Pants</mat-checkbox>
+            <mat-form-field *ngIf="checkForPants" appearance="fill" id="boxDescription">
+                <mat-label class="notes">Notes:</mat-label>
+                <textarea placeholder="Slacks preferred..." matInput></textarea>
+            </mat-form-field>
+        </div>
+
+        <div id="shoesHelpers" class="clothingHelpers">
+            <mat-checkbox [(ngModel)]="checkForShoes" name="shoes" value="true" labelPosition="before" class="example-margin">Shoes</mat-checkbox>
+            <mat-form-field *ngIf="checkForShoes" appearance="fill" id="boxDescription">
+                <mat-label class="notes">Notes:</mat-label>
+                <textarea placeholder="Open toe..." matInput></textarea>
+            </mat-form-field>
+        </div>
+
+        <div id="jacketHelpers" class="clothingHelpers">
+            <mat-checkbox [(ngModel)]="checkForJacket" name="jacket" value="true" labelPosition="before" class="example-margin">Jacket</mat-checkbox>
+            <mat-form-field *ngIf="checkForJacket" appearance="fill" id="boxDescription">
+                <mat-label class="notes">Notes:</mat-label>
+                <textarea placeholder="Leather Jacket..." matInput></textarea>
+            </mat-form-field>
+        </div>
+
+        <div id="socksHelpers" class="clothingHelpers">
+            <mat-checkbox [(ngModel)]="checkForSocks" name="socks" value="true" labelPosition="before" class="example-margin">Socks</mat-checkbox>
+            <mat-form-field *ngIf="checkForSocks" appearance="fill" id="boxDescription">
+                <mat-label class="notes">Notes:</mat-label>
+                <textarea placeholder="Ankle Socks Preferred" matInput></textarea>
+            </mat-form-field>
+        </div>
+
+        <div id="miscHelpers" class="clothingHelpers">
+            <mat-checkbox [(ngModel)]="checkForMisc" name="misc" value="true" labelPosition="before" class="example-margin">Misc</mat-checkbox>
+            <mat-form-field *ngIf="checkForMisc" appearance="fill" id="boxDescription">
+                <mat-label class="notes">Notes:</mat-label>
+                <textarea placeholder="Sunglasses are needed..." matInput></textarea>
+            </mat-form-field>
+        </div>
+        <mat-form-field appearance="fill" floatLabel="always" id="boxPrice">
+            <mat-label>Target Price</mat-label>
+            <input name="priceRange" ngModel matInput type="number" class="example-right-align" placeholder="150">
+            <span matPrefix>$&nbsp;</span>
+            <span matSuffix>.00</span>
+        </mat-form-field>
+        <button mat-button type="submit" class="submitBtn">
         Submit
         </button>
     </form>

@@ -7,7 +7,7 @@ import { Box } from 'src/app/models/box-model';
   styleUrls: ['./individual-box.component.css']
 })
 export class IndividualBoxComponent implements OnInit {
-  @Input('box') box: Box;
+  @Input('box') box: Box = new Box;
 
   constructor() { }
 

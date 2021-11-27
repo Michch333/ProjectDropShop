@@ -17,6 +17,13 @@ export class RequestBoxComponent implements OnInit {
   showResults: boolean;
   showDash: boolean;
 
+  checkForShirt: boolean = false;
+  checkForPants: boolean = false;
+  checkForShoes: boolean = false;
+  checkForSocks: boolean = false;
+  checkForJacket: boolean = false;
+  checkForMisc: boolean = false;
+
   constructor() {
   }
 
@@ -36,33 +43,33 @@ export class RequestBoxComponent implements OnInit {
 
     console.log(requiredClothing, price);
 
-    let checkForShirt = false;
-    let checkForPants = false;
-    let checkForShoes = false;
-    let checkForSocks = false;
-    let checkForJacket = false;
-    let checkForMisc = false;
+    this.checkForShirt = false;
+    this.checkForPants = false;
+    this.checkForShoes = false;
+    this.checkForSocks = false;
+    this.checkForJacket = false;
+    this.checkForMisc = false;
     console.log('Temp should be empty:');
     console.log(this.filteredBoxes);
 
     requiredClothing.forEach(n => {
       if (n == ClothingType.Shirt) {
-        checkForShirt = true;
+        this.checkForShirt = true;
       };
       if (n == ClothingType.Pants) {
-        checkForPants = true;
+        this.checkForPants = true;
       };
       if (n == ClothingType.Socks) {
-        checkForSocks = true;
+        this.checkForSocks = true;
       };
       if (n == ClothingType.Shoes) {
-        checkForShoes = true;
+        this.checkForShoes = true;
       };
       if (n == ClothingType.Jacket) {
-        checkForJacket = true;
+        this.checkForJacket = true;
       };
       if (n == ClothingType.Misc) {
-        checkForMisc = true;
+        this.checkForMisc = true;
       }
     });
     this.filteredBoxes = this.boxes;
@@ -70,22 +77,22 @@ export class RequestBoxComponent implements OnInit {
     console.log(this.filteredBoxes);
 
     this.boxes.forEach(z => {
-      if (checkForShirt) {
+      if (this.checkForShirt) {
         this.filteredBoxes = this.filteredBoxes.filter(obj => obj.hasShirt == true);
       };
-      if (checkForPants) {
+      if (this.checkForPants) {
         this.filteredBoxes = this.filteredBoxes.filter(obj => obj.hasPants == true)
       };
-      if (checkForShoes) {
+      if (this.checkForShoes) {
         this.filteredBoxes = this.filteredBoxes.filter(obj => obj.hasShoes == true)
       };
-      if (checkForSocks) {
+      if (this.checkForSocks) {
         this.filteredBoxes = this.filteredBoxes.filter(obj => obj.hasSocks == true);
       };
-      if (checkForJacket) {
+      if (this.checkForJacket) {
         this.filteredBoxes = this.filteredBoxes.filter(obj => obj.hasJacket == true)
       };
-      if (checkForMisc) {
+      if (this.checkForMisc) {
         this.filteredBoxes = this.filteredBoxes.filter(obj => obj.hasMisc == true)
       };
     });

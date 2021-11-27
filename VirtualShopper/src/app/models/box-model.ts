@@ -29,32 +29,36 @@ export class Box {
     hasMisc: boolean = false;
 
     checkForClothingItem () {
-        this.Items.forEach(z => {
-            if (z.clothingType == ClothingType.Shirt) {
-                this.hasShirt = true;
-            }
-            if (z.clothingType == ClothingType.Pants) {
-                this.hasPants = true;
-            }
-            if (z.clothingType == ClothingType.Socks) {
-                this.hasSocks = true;
-            }
-            if (z.clothingType == ClothingType.Shoes) {
-                this.hasShoes = true;
-            }
-            if (z.clothingType == ClothingType.Jacket) {
-                this.hasJacket = true;
-            }
-            if (z.clothingType == ClothingType.Misc) {
-                this.hasMisc = true;
-            }
-        });
+        if (this.Items != undefined) {
+            this.Items.forEach(z => {
+                if (z.clothingType == ClothingType.Shirt) {
+                    this.hasShirt = true;
+                }
+                if (z.clothingType == ClothingType.Pants) {
+                    this.hasPants = true;
+                }
+                if (z.clothingType == ClothingType.Socks) {
+                    this.hasSocks = true;
+                }
+                if (z.clothingType == ClothingType.Shoes) {
+                    this.hasShoes = true;
+                }
+                if (z.clothingType == ClothingType.Jacket) {
+                    this.hasJacket = true;
+                }
+                if (z.clothingType == ClothingType.Misc) {
+                    this.hasMisc = true;
+                }
+            });
+        }
     };
     calcTotalPrice () {
         let price = 0;
-        this.Items.forEach(z => {
-            price = (price + z.price);
-        });
+        if (this.Items != undefined) {
+            this.Items.forEach(z => {
+                price = (price + z.price);
+            });
+        }
         return price;
     }
 }
