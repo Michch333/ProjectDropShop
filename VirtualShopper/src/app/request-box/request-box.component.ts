@@ -9,7 +9,8 @@ import { translateCheckBoxes, filterBoxes } from '../util/filter-by-criteria'
   styleUrls: ['./request-box.component.css']
 })
 export class RequestBoxComponent implements OnInit {
-  @Input() boxes; 
+  @Input() boxes;
+  @Input() profile;
   filteredSubmitted: boolean;
   filteredBoxes: Box[] = [];
   singleBox: Box;
@@ -28,6 +29,8 @@ export class RequestBoxComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    let tempProfile = this.profile;
     
   }
   getFilteredBoxesByCriteria(result) {

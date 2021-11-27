@@ -15,4 +15,8 @@ export class ProfileSelectComponent implements OnInit {
   selectMensMisc() {
     this.profileSelect .emit('mensMisc');
   }
+
+  selectWomens() {
+    this.profileSelect .emit('womens');
+  }
 }

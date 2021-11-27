@@ -10,6 +10,7 @@ import { createRandomBox } from './util/create-random-box';
 export class AppComponent {
   title = 'VirtualShopper';
   profileSelected: boolean = false;
+  profile: string;
   constructor() {
   }
   ngOnInit() {
@@ -17,11 +18,21 @@ export class AppComponent {
   dummyDataBoxes: Box[];
 
   profileSelect(profile: string){
+    this.profile = profile;
     if (profile == 'mensMisc') {
       this.profileSelected == true;
       this.dummyDataBoxes = [];
       for (let i = 0; i < 1000; i++){
         this.dummyDataBoxes.push(createRandomBox(i))
+      }
+      console.log('Done!');
+    };
+
+    if (profile == 'womens') {
+      this.profileSelected == true;
+      this.dummyDataBoxes = [];
+      for (let i = 0; i < 1000; i++){
+        this.dummyDataBoxes.push(createRandomBox(i, 'womens'))
       }
       console.log('Done!');
     };
