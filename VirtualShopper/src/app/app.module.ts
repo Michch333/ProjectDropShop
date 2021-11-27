@@ -24,6 +24,7 @@ import { RequestBoxComponent } from './request-box/request-box.component';
 import { FilteredResultsComponent } from './request-box/filtered-results/filtered-results.component';
 import { UserDashComponent } from './request-box/user-dash/user-dash.component';
 import { IndividualBoxComponent } from './request-box/individual-box/individual-box.component';
+import { ProfileSelectComponent } from './profile-select/profile-select.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { IndividualBoxComponent } from './request-box/individual-box/individual-
     FilteredResultsComponent,
     UserDashComponent,
     IndividualBoxComponent,
+    ProfileSelectComponent,
   ],
   imports: [
     BrowserModule,
