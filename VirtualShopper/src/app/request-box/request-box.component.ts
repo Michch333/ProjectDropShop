@@ -20,6 +20,7 @@ export class RequestBoxComponent implements OnInit {
   showThankYou: boolean;
   showResults: boolean;
   showDash: boolean;
+  showIndividual: boolean;
 
   checkForShirt: boolean = false;
   checkForPants: boolean = false;
@@ -27,6 +28,14 @@ export class RequestBoxComponent implements OnInit {
   checkForSocks: boolean = false;
   checkForJacket: boolean = false;
   checkForMisc: boolean = false;
+
+  hasShirtNotes: boolean = false;
+  hasPantsNotes: boolean = false;
+  hasShoesNotes: boolean = false;
+  hasSocksNotes: boolean = false;
+  hasJacketNotes: boolean = false;
+  hasMiscNotes: boolean = false;
+
   requestDetails: string;
 
   constructor() {
@@ -166,6 +175,7 @@ export class RequestBoxComponent implements OnInit {
     this.singleBox = invdBox;
     this.showResults = false;
     this.showDash = false;
+    this.showIndividual = true;
   }
 
 }

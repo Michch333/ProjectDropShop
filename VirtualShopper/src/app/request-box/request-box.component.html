@@ -18,7 +18,8 @@
 
         <div id="shirtHelpers" class="clothingHelpers">
             <mat-checkbox [(ngModel)]="checkForShirt" name="shirt" value="true" labelPosition="before" class="example-margin">Shirt</mat-checkbox>
-            <mat-form-field *ngIf="checkForShirt" appearance="fill" id="boxDescription">
+            <mat-checkbox *ngIf="checkForShirt" [(ngModel)]="hasShirtNotes" name="hasShirtNotes" value="true" labelPosition="before" class="example-margin notesCheckbox">Additional Notes?</mat-checkbox>
+            <mat-form-field *ngIf="hasShirtNotes" appearance="fill" class="itemNotes">
                 <mat-label class="notes">Notes:</mat-label>
                 <textarea placeholder="Loose fitting..." matInput name="shirtNotes" ngModel ></textarea>
             </mat-form-field>
@@ -26,7 +27,8 @@
 
         <div id="pantsHelpers" class="clothingHelpers">
             <mat-checkbox [(ngModel)]="checkForPants" name="pants" value="true" labelPosition="before" class="example-margin">Pants</mat-checkbox>
-            <mat-form-field *ngIf="checkForPants" appearance="fill" id="boxDescription">
+            <mat-checkbox *ngIf="checkForPants" [(ngModel)]="hasPantsNotes" name="hasPantsNotes" value="true" labelPosition="before" class="example-margin notesCheckbox">Additional Notes?</mat-checkbox>
+            <mat-form-field *ngIf="hasPantsNotes" appearance="fill" class="itemNotes">
                 <mat-label class="notes">Notes:</mat-label>
                 <textarea placeholder="Slacks preferred..." matInput></textarea>
             </mat-form-field>
@@ -34,7 +36,8 @@
 
         <div id="shoesHelpers" class="clothingHelpers">
             <mat-checkbox [(ngModel)]="checkForShoes" name="shoes" value="true" labelPosition="before" class="example-margin">Shoes</mat-checkbox>
-            <mat-form-field *ngIf="checkForShoes" appearance="fill" id="boxDescription">
+            <mat-checkbox *ngIf="checkForShoes" [(ngModel)]="hasShoesNotes" name="hasShoesNotes" value="true" labelPosition="before" class="example-margin notesCheckbox">Additional Notes?</mat-checkbox>
+            <mat-form-field *ngIf="hasShoesNotes" appearance="fill" class="itemNotes">
                 <mat-label class="notes">Notes:</mat-label>
                 <textarea placeholder="Open toe..." matInput></textarea>
             </mat-form-field>
@@ -42,7 +45,8 @@
 
         <div id="jacketHelpers" class="clothingHelpers">
             <mat-checkbox [(ngModel)]="checkForJacket" name="jacket" value="true" labelPosition="before" class="example-margin">Dress / Jacket</mat-checkbox>
-            <mat-form-field *ngIf="checkForJacket" appearance="fill" id="boxDescription">
+            <mat-checkbox *ngIf="checkForJacket" [(ngModel)]="hasJacketNotes" name="hasJacketNotes" value="true" labelPosition="before" class="example-margin notesCheckbox">Additional Notes?</mat-checkbox>
+            <mat-form-field *ngIf="hasJacketNotes" appearance="fill" class="itemNotes">
                 <mat-label class="notes">Notes:</mat-label>
                 <textarea placeholder="Leather Jacket..." matInput></textarea>
             </mat-form-field>
@@ -50,7 +54,8 @@
 
         <div id="socksHelpers" class="clothingHelpers">
             <mat-checkbox [(ngModel)]="checkForSocks" name="socks" value="true" labelPosition="before" class="example-margin">Socks</mat-checkbox>
-            <mat-form-field *ngIf="checkForSocks" appearance="fill" id="boxDescription">
+            <mat-checkbox *ngIf="checkForSocks" [(ngModel)]="hasSocksNotes" name="hasSocksNotes" value="true" labelPosition="before" class="example-margin notesCheckbox">Additional Notes?</mat-checkbox>
+            <mat-form-field *ngIf="hasSocksNotes" appearance="fill" class="itemNotes">
                 <mat-label class="notes">Notes:</mat-label>
                 <textarea placeholder="Ankle Socks Preferred" matInput></textarea>
             </mat-form-field>
@@ -58,7 +63,8 @@
 
         <div id="miscHelpers" class="clothingHelpers">
             <mat-checkbox [(ngModel)]="checkForMisc" name="misc" value="true" labelPosition="before" class="example-margin">Misc</mat-checkbox>
-            <mat-form-field *ngIf="checkForMisc" appearance="fill" id="boxDescription">
+            <mat-checkbox *ngIf="checkForMisc" [(ngModel)]="hasMiscNotes" name="hasMiscNotes" value="true" labelPosition="before" class="example-margin notesCheckbox">Additional Notes?</mat-checkbox>
+            <mat-form-field *ngIf="hasMiscNotes" appearance="fill" class="itemNotes">
                 <mat-label class="notes">Notes:</mat-label>
                 <textarea placeholder="Sunglasses are needed..." matInput></textarea>
             </mat-form-field>
@@ -82,4 +88,4 @@
 
 <app-user-dash (createRequest) = "createRequest($event)" (viewResults) = "viewResults($event)" [boxes] = "filteredBoxes" *ngIf = "showDash == true"></app-user-dash>
 <app-filtered-results (sentIndvBox) = "viewIndividualBox($event)" *ngIf = "showResults == true" [request]="request" [boxes] ="filteredBoxes"></app-filtered-results>
-<app-individual-box [box] = "singleBox"></app-individual-box>
+<app-individual-box *ngIf="showIndividual" [box] = "singleBox"></app-individual-box>

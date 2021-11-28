@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+}
+
+.leftHalf {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 98vh;
+    width: 50%;
+    border: 1px solid black;
+}
+
+.rightHalf {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 98vh;
+    width: 50%;
+    border: 1px solid black;
+}
+
+.shopperImage{
+    max-height: 35vh;
+    max-width: 35vh;
+}
+
+.itemImage{
+    max-height: 35vh;
+    max-width: 35vh;
+}

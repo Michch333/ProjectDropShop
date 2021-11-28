@@ -1,5 +1,17 @@
-<h1>Total Box Price: ${{box.totalPrice}}</h1>
-<div *ngFor="let item of box.Items">
-    <h1>${{item.price}}</h1>
-    <img [src]="item.imageUrl" style="max-height: 400px;"/>
+<div class="container">
+    <div class="leftHalf">
+        <p>Your Shopper info:</p>
+        <p>{{shopper.name}}</p>
+        <p>Rating: {{shopper.rating}}/10</p>
+        <img class="shopperImage" [src]="shopper.imageURL" />
+        <p>"{{shopper.quip}}"</p>
+    </div>
+
+    <div class="rightHalf">
+        <h3>Total Price: ${{box.totalPrice}}</h3>
+        <div class="items" *ngFor="let item of box.Items">
+            <img class="itemImage" [src]="item.imageUrl"/>
+            <h1>${{item.price}}</h1>
+        </div>
+    </div>
 </div>

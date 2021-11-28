@@ -1,6 +1,7 @@
 import { Box } from "../models/box-model";
 import { ClothingType } from "../models/clothing-type-model";
 import { Item } from "../models/item-model";
+import { Shopper } from "../models/shopper-model";
 import { Size } from "../models/size-model";
 
 export function createRandomBox(index?: number, profile?: string) {
@@ -111,6 +112,77 @@ export function createRandomBox(index?: number, profile?: string) {
     console.log(myBox);
     return myBox;
 }
+
+export function createRandomShopper(){
+    let tempShopper = new Shopper('','', 0);
+    let randomName = getRandomIntWithMin(0,5);
+    switch (randomName) {
+        case 0: {
+            tempShopper.name = 'Mike';
+            break;
+        };
+        case 1: {
+            tempShopper.name = 'Hillary';
+            break;
+        };
+        case 2: {
+            tempShopper.name = 'Jason';
+            break;
+        };
+        case 3: {
+            tempShopper.name = 'Kelsey';
+            break;
+        };
+        case 4: {
+            tempShopper.name = 'Jackson';
+            break;
+        };
+        case 5: {
+            tempShopper.name = 'Kimberly';
+            break;
+        };
+        default: {
+            tempShopper.name = 'Mike';
+            break;
+        }
+    };
+    let randomQuip = getRandomIntWithMin(0, 4);
+    switch (randomQuip) {
+        case 0: {
+            tempShopper.quip = 'I hope you love this box! The second I saw your profile and request I knew EXACTLY what you would look great it! I kept it classy, while also keeping it affordable!';
+            break;
+        };
+        case 1: {
+            tempShopper.quip = 'Hey there! This outfit is handpicked by me and my 5 friends who think this style is totally you! From the top to the bottom, you cannot beat this style with this value!';
+            break;
+        };
+        case 2: {
+            tempShopper.quip = 'Flawless. Hands down flawless. You will WOW everyone with this combination, guarenteed! A little flashy never hurts right? Just be sure to not stare directly into it!';
+            break;
+        };
+        case 3: {
+            tempShopper.quip = 'Three Words - KILLING IT, QUEEN. Tell me this box aint the GREATEST thing you\'ve ever laid eyes on??';
+            break;
+        };
+        case 4: {
+            tempShopper.quip = 'Hello - My lover has the same style as you. I think this box is perfect for what you\'re looking to get out of it. I was able to find some great deals too!';
+            break;
+        };
+        default: {
+            tempShopper.quip = 'Default?';
+            break;
+        }
+    };
+    if (randomName % 2 == 0) {
+        tempShopper.imageURL = getRandomMensImage();
+    }
+    else {
+        tempShopper.imageURL = getRandomWomensImage();
+    }
+    tempShopper.rating = getRandomIntWithMin(5,10);
+    return tempShopper;
+}
+
 export function getNumberOfItems(max: number) {
     return getRandomIntWithMin(1,max);
 }
@@ -139,6 +211,42 @@ export function getRandomPrice(lowMedHigh: number) {
     if (lowMedHigh == 3){  // Xtra High Price
         return getRandomIntWithMin(100, 350);
     }
+}
+
+export function getRandomMensImage() {
+    let random = getRandomIntWithMin(0, 2);
+    switch (random) {
+        case 0: {
+            return '../../assets/images/mshopper1.jpg';
+        };
+        case 1: {
+            return '../../assets/images/mshopper2.jpg';
+        };
+        case 3: {
+            return '../../assets/images/mshopper3.jpg';
+        };
+        default: {
+            return '../../assets/images/mshopper1.jpg';
+        }
+    };
+}
+
+export function getRandomWomensImage() {
+    let random = getRandomIntWithMin(0, 2);
+    switch (random) {
+        case 0: {
+            return '../../assets/images/wshopper1.jpg';
+        };
+        case 1: {
+            return '../../assets/images/wshopper2.jpg';
+        };
+        case 3: {
+            return '../../assets/images/wshopper3.jpg';
+        };
+        default: {
+            return '../../assets/images/wshopper1.jpg';
+        }
+    };
 }
 
 export function getRandomShirtImage(profile?: string){

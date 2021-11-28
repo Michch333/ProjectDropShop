@@ -19,15 +19,22 @@ p {
 }
 
 #boxDescription {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
+.itemNotes {
+    flex-basis: 100%;
+}
 
+.notesCheckbox {
+  font-size: .75em;
+  font-style: italic;
+}
 
 .clothingHelpers{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin-bottom: 10px;
 }
 
