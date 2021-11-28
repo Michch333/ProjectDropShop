@@ -14,6 +14,7 @@ export class RequestBoxComponent implements OnInit {
   filteredSubmitted: boolean;
   filteredBoxes: Box[] = [];
   singleBox: Box;
+  showRequest: boolean;
   showThankYou: boolean;
   showResults: boolean;
   showDash: boolean;
@@ -26,16 +27,15 @@ export class RequestBoxComponent implements OnInit {
   checkForMisc: boolean = false;
 
   constructor() {
+    this.showRequest = true;
   }
 
   ngOnInit(): void {
-
-    let tempProfile = this.profile;
-    
   }
   getFilteredBoxesByCriteria(result) {
     this.filteredSubmitted = true;
     this.showThankYou = true;
+    this.showRequest = false;
     let requiredItems: ClothingType[] = this.translateCheckBoxes(result);
     console.log(result);
     this.filterBoxes(result.priceRange, requiredItems);
@@ -140,6 +140,7 @@ export class RequestBoxComponent implements OnInit {
   }
 
   viewResults(event: boolean){
+    this.showDash = false;
    this.showResults = event;
   }
 
