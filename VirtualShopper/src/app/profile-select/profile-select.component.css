@@ -2,5 +2,27 @@
     display: flex;
     flex-direction: row;
     border: 1px solid blue;
-    width: 35vw;
+    justify-content: space-between;
+    width: 60vw;
+}
+
+.profileImage {
+    align-self: center;
+    max-height: 90%;
+    max-width:80%;
+    min-height: 80%;
+}
+
+.supported {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.mens {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 60vh;
+    background-image: url();
 }
