@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Box } from '../models/box-model';
 import { ClothingType } from '../models/clothing-type-model';
-import { translateCheckBoxes, filterBoxes } from '../util/filter-by-criteria'
+import { translateCheckBoxes, filterBoxes } from '../util/filter-by-criteria';
+import {bRequest} from '../models/request-model';
 
 @Component({
   selector: 'app-request-box',
@@ -11,6 +12,7 @@ import { translateCheckBoxes, filterBoxes } from '../util/filter-by-criteria'
 export class RequestBoxComponent implements OnInit {
   @Input() boxes;
   @Input() profile;
+  request: bRequest; 
   filteredSubmitted: boolean;
   filteredBoxes: Box[] = [];
   singleBox: Box;
@@ -25,19 +27,28 @@ export class RequestBoxComponent implements OnInit {
   checkForSocks: boolean = false;
   checkForJacket: boolean = false;
   checkForMisc: boolean = false;
+  requestDetails: string;
 
   constructor() {
     this.showRequest = true;
+    this.request = new bRequest([], '', 0, '', '');
   }
 
   ngOnInit(): void {
   }
   getFilteredBoxesByCriteria(result) {
+    //Request Mapping
+    this.request.requestDetails = result.requestDetails;
+    this.request.shirtNotes = result.shirtNotes;
+    this.request.targetPrice = result.priceRange;
+
+    // Results Mapping
     this.filteredSubmitted = true;
     this.showThankYou = true;
     this.showRequest = false;
     let requiredItems: ClothingType[] = this.translateCheckBoxes(result);
     console.log(result);
+    this.requestDetails = result.requestDetails;
     this.filterBoxes(result.priceRange, requiredItems);
   }
 

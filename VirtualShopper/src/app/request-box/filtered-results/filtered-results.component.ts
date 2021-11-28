@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Box } from 'src/app/models/box-model';
+import { bRequest } from 'src/app/models/request-model';
 
 @Component({
   selector: 'app-filtered-results',
@@ -8,6 +9,7 @@ import { Box } from 'src/app/models/box-model';
 })
 export class FilteredResultsComponent implements OnInit {
   @Input('boxes') filteredBoxes: Box[];
+  @Input() request: bRequest;
   @Output() sentIndvBox = new EventEmitter<Box>();
   constructor() { }
 

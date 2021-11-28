@@ -1,20 +1,22 @@
 <div>
-    <h1>
-        Your Boxes ({{filteredBoxes.length}})
-    </h1>
-    <div *ngFor="let box of filteredBoxes" style="border: 1px solid black; margin-bottom: 20px;display: flex; justify-content: space-between;">
-        <div style="align-self: flex-start;">
-        <h1>Total Price: ${{box.totalPrice}}</h1>
-        </div>
-        Items:
-        <div *ngFor="let item of box.Items">
-            <div>
-                <img [src]="item.imageUrl" style="height: 200px; width: 200px;">
-                ${{item.price}}
-                {{item.ClothingType}}
-                {{item.Size}}
-            </div>
-        </div>
-        <button  (click)= "viewIndividualBox(box.boxId)">View Box!</button>
+
+    <div class="detailsContainer">
+        <p class="heading">Reminder of your request:</p>
+        <p class="details" *ngIf="request.requestDetails.length > 2">"{{request.requestDetails}}"</p>
+        <p>Your Preferred Price Range: ${{request.targetPrice}}</p>
+        <h1 class="title">
+            Your Boxes ({{filteredBoxes.length}})
+        </h1>
     </div>
+
+    <div class="allBoxesContainer">
+        <div *ngFor="let box of filteredBoxes" class="boxContainer" style="border: 1px solid black;">
+            <button mat-button id="viewBoxBtn"  (click)= "viewIndividualBox(box.boxId)">View Box!</button>
+            <div class="itemContainer" *ngFor="let item of box.Items">
+                    <img class="thumbnailImage" [src]="item.imageUrl">
+            </div>
+            <p id="totalPrice">Total Price: ${{box.totalPrice}}</p>
+        </div>
+    </div>
+
 </div>

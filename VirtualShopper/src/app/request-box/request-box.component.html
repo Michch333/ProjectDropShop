@@ -5,9 +5,8 @@
         <div id="topRow">
             <mat-form-field appearance="fill" id="boxDescription">
                 <mat-label>Tell us what brought you here...</mat-label>
-                <textarea placeholder="Ex. Going to a dinner party..." matInput></textarea>
+                <textarea placeholder="Ex. Going to a dinner party..." matInput name="requestDetails" ngModel></textarea>
             </mat-form-field>
-            <!-- <input type="number" name="priceRange" label="Please Enter your price range" placeholder="150" value="150" ngModel /> -->
         </div>
 
 
@@ -21,7 +20,7 @@
             <mat-checkbox [(ngModel)]="checkForShirt" name="shirt" value="true" labelPosition="before" class="example-margin">Shirt</mat-checkbox>
             <mat-form-field *ngIf="checkForShirt" appearance="fill" id="boxDescription">
                 <mat-label class="notes">Notes:</mat-label>
-                <textarea placeholder="Loose fitting..." matInput></textarea>
+                <textarea placeholder="Loose fitting..." matInput name="shirtNotes" ngModel ></textarea>
             </mat-form-field>
         </div>
 
@@ -82,5 +81,5 @@
 </div>
 
 <app-user-dash (createRequest) = "createRequest($event)" (viewResults) = "viewResults($event)" [boxes] = "filteredBoxes" *ngIf = "showDash == true"></app-user-dash>
-<app-filtered-results (sentIndvBox) = "viewIndividualBox($event)" *ngIf = "showResults == true" [boxes] ="filteredBoxes"></app-filtered-results>
+<app-filtered-results (sentIndvBox) = "viewIndividualBox($event)" *ngIf = "showResults == true" [request]="request" [boxes] ="filteredBoxes"></app-filtered-results>
 <app-individual-box [box] = "singleBox"></app-individual-box>

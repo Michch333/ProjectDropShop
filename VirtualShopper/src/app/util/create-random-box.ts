@@ -5,7 +5,7 @@ import { Size } from "../models/size-model";
 
 export function createRandomBox(index?: number, profile?: string) {
     var itemList: Item[] = [];
-    var numberOfItems = getNumberOfItems(6);
+    var numberOfItems = getNumberOfItems(5);
 
     if (profile != undefined) {
         for (let i = 0; i < numberOfItems; i++){

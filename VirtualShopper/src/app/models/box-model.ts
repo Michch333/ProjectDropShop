@@ -20,6 +20,7 @@ export class Box {
     totalPrice: number = 0;
     boxId: number;
     Items: Item [];
+    RequestDetails?: string; 
 
     hasShirt: boolean = false; 
     hasPants: boolean = false;
