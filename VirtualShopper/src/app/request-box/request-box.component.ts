@@ -12,6 +12,7 @@ import {bRequest} from '../models/request-model';
 export class RequestBoxComponent implements OnInit {
   @Input() boxes;
   @Input() profile;
+  activeProfile: string;
   request: bRequest; 
   filteredSubmitted: boolean;
   filteredBoxes: Box[] = [];
@@ -44,6 +45,7 @@ export class RequestBoxComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.activeProfile = this.profile;
   }
   getFilteredBoxesByCriteria(result) {
     //Request Mapping

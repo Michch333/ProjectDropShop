@@ -1,3 +1,8 @@
+#container {
+  background-color: lightsteelblue;
+  opacity: .8;
+}
+
 p {
     font-size: small;
     font-style: italic;
@@ -7,8 +12,9 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid black;
+    border: 1px solid blue;
     border-radius: 6%;
+    overflow: hidden;
     padding: 1em;
 }
 

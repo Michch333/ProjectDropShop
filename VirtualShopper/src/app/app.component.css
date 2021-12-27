@@ -1,0 +1,29 @@
+#container {
+    height: 100vh;
+    width: 100%;
+    background-image: url(../assets/images/shopperBackdrop.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+#mensContainer {
+    height: 100vh;
+    width: 100%;
+    background-image: url(../assets/images/mensBackdrop2.jpg);
+    background-repeat: repeat;
+    background-position: center;
+}
+#womensContainer {
+    height: 100vh;
+    width: 100%;
+    background-image: url(../assets/images/womensBackdrop2.jpg);
+    background-repeat: repeat-x;
+    background-position: center;
+}
+  
+#profile-select{
+    border: 1px solid black;
+    border-radius: 5%;
+    overflow: hidden;
+}

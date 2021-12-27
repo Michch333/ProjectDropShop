@@ -1,4 +1,4 @@
-<div *ngIf="showRequest" class="formContainer" style="display: flex; flex-direction: column; max-width: 75%;">
+<div id="container" *ngIf="showRequest" class="formContainer" style="display: flex; flex-direction: column; max-width: 75%;">
     <form #criteria="ngForm" (ngSubmit)="getFilteredBoxesByCriteria(criteria.value)" id="form">
         <h1 style="margin: auto; margin-bottom: 10px;">Welcome!</h1>
 
@@ -8,7 +8,6 @@
                 <textarea placeholder="Ex. Going to a dinner party..." matInput name="requestDetails" ngModel></textarea>
             </mat-form-field>
         </div>
-
 
         <div id="boxHelpers">
             <h2>What do you NEED included in your box?</h2>
@@ -43,8 +42,17 @@
             </mat-form-field>
         </div>
 
-        <div id="jacketHelpers" class="clothingHelpers">
-            <mat-checkbox [(ngModel)]="checkForJacket" name="jacket" value="true" labelPosition="before" class="example-margin">Dress / Jacket</mat-checkbox>
+        <div *ngIf="activeProfile == 'mensMisc'" id="jacketHelpers" class="clothingHelpers">
+            <mat-checkbox [(ngModel)]="checkForJacket" name="jacket" value="true" labelPosition="before" class="example-margin">Jacket</mat-checkbox>
+            <mat-checkbox *ngIf="checkForJacket" [(ngModel)]="hasJacketNotes" name="hasJacketNotes" value="true" labelPosition="before" class="example-margin notesCheckbox">Additional Notes?</mat-checkbox>
+            <mat-form-field *ngIf="hasJacketNotes" appearance="fill" class="itemNotes">
+                <mat-label class="notes">Notes:</mat-label>
+                <textarea placeholder="Leather Jacket..." matInput></textarea>
+            </mat-form-field>
+        </div>
+
+        <div *ngIf="activeProfile == 'womens'" id="jacketHelpers" class="clothingHelpers">
+            <mat-checkbox [(ngModel)]="checkForJacket" name="jacket" value="true" labelPosition="before" class="example-margin">Dress</mat-checkbox>
             <mat-checkbox *ngIf="checkForJacket" [(ngModel)]="hasJacketNotes" name="hasJacketNotes" value="true" labelPosition="before" class="example-margin notesCheckbox">Additional Notes?</mat-checkbox>
             <mat-form-field *ngIf="hasJacketNotes" appearance="fill" class="itemNotes">
                 <mat-label class="notes">Notes:</mat-label>

@@ -19,6 +19,7 @@ export class AppComponent {
 
   profileSelect(profile: string){
     this.profile = profile;
+    this.setProfileBackgroundImage(profile);
     if (profile == 'mensMisc') {
       this.profileSelected == true;
       this.dummyDataBoxes = [];
@@ -37,6 +38,15 @@ export class AppComponent {
       console.log('Done!');
     };
 
+  }
 
+  setProfileBackgroundImage(profile: string) {
+    let testElement = document.getElementById("container");
+    if (profile == 'mensMisc') {
+      testElement.setAttribute('id', 'mensContainer');
+    }
+    else if (profile == 'womens') {
+      testElement.setAttribute('id', 'womensContainer');
+    }
   }
 }

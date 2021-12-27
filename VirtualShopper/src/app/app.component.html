@@ -1,4 +1,4 @@
-<div style="display: flex; flex-direction: row; justify-content: space-evenly;">
-    <app-profile-select *ngIf= "dummyDataBoxes == undefined" (profileSelect) = "profileSelect($event)"></app-profile-select>
+<div id="container" style="display: flex; flex-direction: row; justify-content: space-evenly;">
+    <app-profile-select id="profile-select" *ngIf= "dummyDataBoxes == undefined" (profileSelect) = "profileSelect($event)"></app-profile-select>
     <app-request-box *ngIf= "dummyDataBoxes != undefined" [profile] = "profile" [boxes] = "dummyDataBoxes"></app-request-box>
 </div>
