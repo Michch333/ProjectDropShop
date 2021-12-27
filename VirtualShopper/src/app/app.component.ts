@@ -61,6 +61,5 @@ export class AppComponent {
   }
 
   viewFilteredBoxes() {
-    
   }
 }

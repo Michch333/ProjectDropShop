@@ -22,7 +22,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { TestComponent } from './test/test.component';
 import { FormsModule } from '@angular/forms';
 import { RequestBoxComponent } from './request-box/request-box.component';
-import { FilteredResultsComponent } from './request-box/filtered-results/filtered-results.component';
+import { FilteredResultsComponent } from './filtered-results/filtered-results.component';
 import { UserDashComponent } from './request-box/user-dash/user-dash.component';
 import { IndividualBoxComponent } from './request-box/individual-box/individual-box.component';
 import { ProfileSelectComponent } from './profile-select/profile-select.component';
