@@ -55,7 +55,6 @@ export class AppComponent {
   updateNoOfBoxesBadge(numberOfBoxes: number) {
     this.numberOfBoxes = numberOfBoxes;
   }
-
   updateFilteredBoxes(filteredBoxes: Box[]) {
     this.updateNoOfBoxesBadge(filteredBoxes.length);
     this.fliteredBoxes = filteredBoxes;
