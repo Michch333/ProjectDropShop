@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MatSlideToggle } from '@angular/material/slide-toggle';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -51,6 +52,7 @@ import { ProfileSelectComponent } from './profile-select/profile-select.componen
     ReactiveFormsModule,
     MatGridListModule,
     MatMenuModule,
+    MatToolbarModule,
     MatIconModule,
     LayoutModule,
     AppRoutingModule,
