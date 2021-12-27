@@ -45,8 +45,20 @@ export class RequestBoxComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.activeProfile = this.profile;
+    this.activeProfile = this.profile; 
   }
+
+  //Currently Just makes request form dissapear?
+  setProfileBackgroundStyle(profile: string) {
+    let requestElement = document.getElementById("requestBoxContainer");
+    if (profile == 'mensMisc') {
+      requestElement.setAttribute('id', 'requestMensContainer');
+    }
+    else if (profile == 'womens') {
+      requestElement.setAttribute('id', 'requestWomensContainer');
+    }
+  }
+
   getFilteredBoxesByCriteria(result) {
     //Request Mapping
     this.request.requestDetails = result.requestDetails;

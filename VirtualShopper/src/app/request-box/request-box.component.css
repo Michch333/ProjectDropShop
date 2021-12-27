@@ -1,6 +1,13 @@
-#container {
-  background-color: lightsteelblue;
-  opacity: .8;
+#requestBoxContainer {
+  background-color: rgb(200, 213, 253);
+}
+
+#requestMensContainer {
+  background-color: rgba(167, 199, 245, 0.767);
+}
+
+#requestWomensContainer {
+  background-color: rgb(194, 150, 156);
 }
 
 p {
@@ -8,11 +15,11 @@ p {
     font-style: italic;
 }
 
-#form {
+#form {   
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid blue;
+    border: 1px solid black;
     border-radius: 6%;
     overflow: hidden;
     padding: 1em;

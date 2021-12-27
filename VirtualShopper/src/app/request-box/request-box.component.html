@@ -1,4 +1,4 @@
-<div id="container" *ngIf="showRequest" class="formContainer" style="display: flex; flex-direction: column; max-width: 75%;">
+<div id="requestBoxContainer" *ngIf="showRequest" class="formContainer" style="display: flex; flex-direction: column; max-width: 75%;">
     <form #criteria="ngForm" (ngSubmit)="getFilteredBoxesByCriteria(criteria.value)" id="form">
         <h1 style="margin: auto; margin-bottom: 10px;">Welcome!</h1>
 
