@@ -12,11 +12,11 @@ import {bRequest} from '../models/request-model';
 export class RequestBoxComponent implements OnInit {
   @Input() boxes;
   @Input() profile;
-  @Output() sendNumberOfMatchingBoxes = new EventEmitter<number>();
+  @Input() filteredBoxes;
+  @Output() sendMatchingBoxes = new EventEmitter<Box[]>();
   activeProfile: string;
   request: bRequest; 
   filteredSubmitted: boolean;
-  filteredBoxes: Box[] = [];
   singleBox: Box;
   showRequest: boolean;
   showThankYou: boolean;
@@ -74,7 +74,7 @@ export class RequestBoxComponent implements OnInit {
     console.log(result);
     this.requestDetails = result.requestDetails;
     this.filterBoxes(result.priceRange, requiredItems);
-    this.sendNumberOfMatchingBoxes.emit(this.filteredBoxes.length);
+    this.sendMatchingBoxes.emit(this.filteredBoxes);
   }
 
   
