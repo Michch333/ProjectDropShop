@@ -26,6 +26,7 @@ import { FilteredResultsComponent } from './request-box/filtered-results/filtere
 import { UserDashComponent } from './request-box/user-dash/user-dash.component';
 import { IndividualBoxComponent } from './request-box/individual-box/individual-box.component';
 import { ProfileSelectComponent } from './profile-select/profile-select.component';
+import {MatBadgeModule} from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { ProfileSelectComponent } from './profile-select/profile-select.componen
     LayoutModule,
     AppRoutingModule,
     FormsModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

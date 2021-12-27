@@ -11,6 +11,8 @@ export class AppComponent {
   title = 'VirtualShopper';
   profileSelected: boolean = false;
   profile: string;
+  numberOfBoxes: number;
+  fliteredBoxes: Box[];
   constructor() {
   }
   ngOnInit() {
@@ -48,5 +50,18 @@ export class AppComponent {
     else if (profile == 'womens') {
       testElement.setAttribute('id', 'womensContainer');
     }
+  }
+
+  updateNoOfBoxesBadge(numberOfBoxes: number) {
+    this.numberOfBoxes = numberOfBoxes;
+  }
+
+  updateFilteredBoxes(filteredBoxes: Box[]) {
+    this.updateNoOfBoxesBadge(filteredBoxes.length);
+    this.fliteredBoxes = filteredBoxes;
+  }
+
+  viewFilteredBoxes() {
+    
   }
 }
