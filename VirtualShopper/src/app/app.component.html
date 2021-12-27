@@ -5,7 +5,7 @@
     <span style="margin-right: 1rem">Rock-It</span>
     <span>Your Boxes</span>
     <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>shopping_bag</mat-icon>
+        <mat-icon matBadge="{{numberOfBoxes}}">shopping_bag</mat-icon>
     </button>
     <span>New Request</span>
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
@@ -14,5 +14,5 @@
 </mat-toolbar>
 <div id="container" style="display: flex; flex-direction: row; justify-content: space-evenly;">
     <app-profile-select id="profile-select" *ngIf= "dummyDataBoxes == undefined" (profileSelect) = "profileSelect($event)"></app-profile-select>
-    <app-request-box *ngIf= "dummyDataBoxes != undefined" [profile] = "profile" [boxes] = "dummyDataBoxes"></app-request-box>
+    <app-request-box (sendNumberOfMatchingBoxes) = "updateNoOfBoxesBadge($event)" *ngIf= "dummyDataBoxes != undefined" [profile] = "profile" [boxes] = "dummyDataBoxes"></app-request-box>
 </div>

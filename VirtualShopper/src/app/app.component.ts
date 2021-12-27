@@ -11,6 +11,7 @@ export class AppComponent {
   title = 'VirtualShopper';
   profileSelected: boolean = false;
   profile: string;
+  numberOfBoxes: number;
   constructor() {
   }
   ngOnInit() {
@@ -48,5 +49,9 @@ export class AppComponent {
     else if (profile == 'womens') {
       testElement.setAttribute('id', 'womensContainer');
     }
+  }
+
+  updateNoOfBoxesBadge(numberOfBoxes: number) {
+    this.numberOfBoxes = numberOfBoxes;
   }
 }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Box } from '../models/box-model';
 import { ClothingType } from '../models/clothing-type-model';
 import { translateCheckBoxes, filterBoxes } from '../util/filter-by-criteria';
@@ -12,6 +12,7 @@ import {bRequest} from '../models/request-model';
 export class RequestBoxComponent implements OnInit {
   @Input() boxes;
   @Input() profile;
+  @Output() sendNumberOfMatchingBoxes = new EventEmitter<number>();
   activeProfile: string;
   request: bRequest; 
   filteredSubmitted: boolean;
@@ -73,6 +74,7 @@ export class RequestBoxComponent implements OnInit {
     console.log(result);
     this.requestDetails = result.requestDetails;
     this.filterBoxes(result.priceRange, requiredItems);
+    this.sendNumberOfMatchingBoxes.emit(this.filteredBoxes.length);
   }
 
   

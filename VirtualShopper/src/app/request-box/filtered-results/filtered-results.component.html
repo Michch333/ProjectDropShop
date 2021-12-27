@@ -10,7 +10,7 @@
     </div>
 
     <div class="allBoxesContainer">
-        <div *ngFor="let box of filteredBoxes" class="boxContainer" style="border: 1px solid black;">
+        <div *ngFor="let box of filteredBoxes" class="boxContainer" style="border: 1px solid black; background-color: lightgoldenrodyellow;">
             <button mat-button id="viewBoxBtn"  (click)= "viewIndividualBox(box.boxId)">View Box!</button>
             <div class="itemContainer" *ngFor="let item of box.Items">
                     <img class="thumbnailImage" [src]="item.imageUrl">
