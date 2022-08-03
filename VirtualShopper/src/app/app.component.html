@@ -15,4 +15,5 @@
 <div id="container" style="display: flex; flex-direction: row; justify-content: space-evenly;">
     <app-profile-select id="profile-select" *ngIf= "dummyDataBoxes == undefined" (profileSelect) = "profileSelect($event)"></app-profile-select>
     <app-request-box (sendMatchingBoxes) = "updateFilteredBoxes($event)" *ngIf= "dummyDataBoxes != undefined" [filteredBoxes] = "filteredBoxes" [profile] = "profile" [boxes] = "dummyDataBoxes"></app-request-box>
+    <app-filtered-results *ngIf= "showResults == true" [boxes] = "filteredBoxes">yoo</app-filtered-results>
 </div>

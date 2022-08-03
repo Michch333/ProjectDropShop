@@ -13,6 +13,7 @@ export class AppComponent {
   profile: string;
   numberOfBoxes: number;
   fliteredBoxes: Box[];
+  showResults: boolean;
   constructor() {
   }
   ngOnInit() {
@@ -62,5 +63,6 @@ export class AppComponent {
 
   viewFilteredBoxes() {
     
+    this.showResults = true;
   }
 }
