@@ -13,7 +13,7 @@
     </button>
 </mat-toolbar>
 <div id="container">
-    <app-profile-select-styled></app-profile-select-styled>
+    <app-profile-select-styled *ngIf="!profileSelected" (profileSelectEvent) = "profileSelect($event)"></app-profile-select-styled>
     <!-- <app-profile-select id="profile-select" *ngIf= "dummyDataBoxes == undefined" (profileSelect) = "profileSelect($event)"></app-profile-select> -->
     <app-request-box (sendMatchingBoxes) = "updateFilteredBoxes($event)" *ngIf= "dummyDataBoxes != undefined" [filteredBoxes] = "filteredBoxes" [profile] = "profile" [boxes] = "dummyDataBoxes"></app-request-box>
 </div>
