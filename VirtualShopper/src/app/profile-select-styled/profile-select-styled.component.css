@@ -1,0 +1,13 @@
+mat-card {
+    max-width: 30vw;
+}
+
+mat-card-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+button {
+    margin: 0 auto;
+}

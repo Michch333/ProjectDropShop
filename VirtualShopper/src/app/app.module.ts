@@ -27,6 +27,7 @@ import { UserDashComponent } from './request-box/user-dash/user-dash.component';
 import { IndividualBoxComponent } from './request-box/individual-box/individual-box.component';
 import { ProfileSelectComponent } from './profile-select/profile-select.component';
 import {MatBadgeModule} from '@angular/material/badge';
+import { ProfileSelectStyledComponent } from './profile-select-styled/profile-select-styled.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import {MatBadgeModule} from '@angular/material/badge';
     UserDashComponent,
     IndividualBoxComponent,
     ProfileSelectComponent,
+    ProfileSelectStyledComponent,
   ],
   imports: [
     BrowserModule,
