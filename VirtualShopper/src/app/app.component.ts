@@ -23,7 +23,7 @@ export class AppComponent {
     this.profile = profile;
     this.setProfileBackgroundImage(profile);
     if (profile == 'mensMisc') {
-      this.profileSelected == true;
+      this.profileSelected = true;
       this.dummyDataBoxes = [];
       for (let i = 0; i < 1000; i++){
         this.dummyDataBoxes.push(createRandomBox(i))
@@ -32,7 +32,7 @@ export class AppComponent {
     };
 
     if (profile == 'womens') {
-      this.profileSelected == true;
+      this.profileSelected = true;
       this.dummyDataBoxes = [];
       for (let i = 0; i < 1000; i++){
         this.dummyDataBoxes.push(createRandomBox(i, 'womens'))
