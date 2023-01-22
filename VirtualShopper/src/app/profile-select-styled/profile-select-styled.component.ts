@@ -21,6 +21,10 @@ export class ProfileSelectStyledComponent implements OnInit {
 
   selectMensMisc() {
     this.profileSelectEvent.emit('mensMisc');
+  };
+
+  selectWomens() {
+    this.profileSelectEvent.emit('womens');
   }
 
 }
