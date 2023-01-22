@@ -8,7 +8,7 @@ export function createRandomBox(index?: number, profile?: string) {
     var itemList: Item[] = [];
     var numberOfItems = getNumberOfItems(5);
 
-    if (profile != undefined) {
+    if (profile != undefined) { // Womens
         for (let i = 0; i < numberOfItems; i++){
             let myItem = new Item();
             let clothingRandomizer = getRandomInt(6);
@@ -58,7 +58,7 @@ export function createRandomBox(index?: number, profile?: string) {
         } 
     }
 
-    else {
+    else { // Mens
         for (let i = 0; i < numberOfItems; i++){
             let myItem = new Item();
             let clothingRandomizer = getRandomInt(6);
